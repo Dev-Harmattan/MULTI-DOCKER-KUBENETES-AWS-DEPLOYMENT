@@ -6,6 +6,7 @@ COPY . .
 RUN npm run build
 
 FROM nginx
+EXPOSE 3000
 # copy the nginx cofig file to nginx base image default config to overide it
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 # copy the build client image to the nginx root file
