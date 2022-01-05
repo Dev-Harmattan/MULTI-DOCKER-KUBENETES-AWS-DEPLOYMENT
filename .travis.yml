@@ -16,7 +16,7 @@ after_success:
   - docker build -t lekan123/multi-server ./server
   - docker build -t lekan123/multi-worker ./worker
   # Login to docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKERID" --password-stdin
+  - docker login -u "$DOCKERID" -p "$DOCKER_TOKEN" docker.io
   # take those images and push them to the docker hub
   - docker push lekan123/multi-client
   - docker push lekan123/multi-nginx
